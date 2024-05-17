@@ -3,8 +3,9 @@ import '../styles/ProductCardDisplay.css';
 
 function ProductCardDisplay({ imgSrc, price }) {
   return (
-    <div style={{ backgroundImage: `url:(${imgSrc})` }}>
-      <p>{price}</p>
+    <div className="card" style={{ backgroundImage: `url(${imgSrc})` }}>
+      <p className="price">${price}</p>
+      <p className="shop-text">Go to Shop</p>
     </div>
   );
 }
