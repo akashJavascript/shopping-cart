@@ -1,6 +1,6 @@
 .card {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -34,7 +34,7 @@
   font-weight: 700;
   font-size: 1.5rem;
   transition: filter 0.3s ease-out;
-
+  margin-bottom: 10px;
   z-index: 1;
 }
 
@@ -59,4 +59,7 @@
 
 .card:not(:hover) .price {
   filter: none;
+}
+.shop-link:visited {
+  color: white;
 }

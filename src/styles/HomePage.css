@@ -1,0 +1,25 @@
+.item-container {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column layout for mobile */
+  gap: 15px;
+  align-items: center;
+  justify-items: center;
+}
+
+@media (min-width: 600px) {
+  .item-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 column layout for tablet */
+    gap: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 column layout for desktop */
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
