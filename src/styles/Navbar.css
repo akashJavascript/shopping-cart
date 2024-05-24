@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #ffedd5;
+  background-color: white;
   padding: 10px;
   padding-left: 20px;
   display: flex;
@@ -30,7 +30,7 @@ ul {
 }
 .nav-link {
   text-decoration: none;
-  color: #f89d00;
+  color: black;
   font-size: 1.2rem;
   font-family: 'Inter', sans-serif;
   font-weight: 600;

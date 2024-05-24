@@ -10,6 +10,8 @@
   border-radius: 20px;
   transition: filter 0.3s ease-out;
   position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  border: 1px solid #f1f1f1; 
 }
 
 .card::before {
@@ -54,6 +56,8 @@
   top: 50%;
   left: 50%;
   opacity: 0;
+  width: 100%;
+  text-align: center;
   transform: translate(-50%, -50%);
 }
 

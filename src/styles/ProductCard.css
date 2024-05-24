@@ -1,0 +1,15 @@
+.shop-card {
+  width: 250px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  transition: filter 0.3s ease-out;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid #f1f1f1;
+}
