@@ -1,0 +1,26 @@
+.shop-header {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2;
+  color: white;
+  background-color: #0ea5e9;
+  padding: 10px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .shop-header {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 375px) {
+  .shop-header {
+    font-size: 1rem;
+  }
+}
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}

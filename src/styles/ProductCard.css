@@ -1,15 +1,83 @@
 .shop-card {
-  width: 250px;
-  height: 250px;
+  width: 275px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  background-size: cover;
-  background-position: center;
   border-radius: 20px;
-  transition: filter 0.3s ease-out;
-  position: relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid #f1f1f1;
+  padding: 20px;
+}
+.item-name {
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+  display: -webkit-box;
+  height: 3em; /* adjust this value depending on your line-height */
+  line-height: 1.5em; /* adjust this value to match your font size */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card-image {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 20px;
+}
+.card-top,
+.card-bottom {
+  padding: 10px;
+  width: 100%;
+}
+.card-top {
+  background-color: #fed7aa;
+  border-radius: 10px;
+}
+
+#quantity {
+  width: 40px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+.add-cart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.add-cart-button {
+  background-color: #fed7aa;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.increment-button,
+.decrement-button {
+  background-color: #fed7aa;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  border-radius: 2px;
+}
+.shop-price {
+  color: black;
+  text-align: center;
+  padding: 5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.quantity-container {
+  display: flex;
+  justify-content: center;
 }
