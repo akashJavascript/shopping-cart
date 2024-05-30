@@ -1,15 +1,11 @@
 import ProductCard from '../components/ProductCard';
 import { UseGetItems } from '../hooks/getItems';
-import { useState } from 'react';
 import NavbarShop from '../components/NavbarShop';
 import '../styles/ShopPage.css';
-const ShopPage = () => {
+
+const ShopPage = ({ cart, addToCart, itemCount }) => {
   let items = UseGetItems(20);
-  const [cart, setCart] = useState([]);
-  const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
-  function addToCart(item) {
-    setCart([...cart, item]);
-  }
+
   return (
     <div>
       <NavbarShop itemCount={itemCount}></NavbarShop>
@@ -31,4 +27,5 @@ const ShopPage = () => {
     </div>
   );
 };
+
 export default ShopPage;

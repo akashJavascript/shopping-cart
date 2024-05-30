@@ -1,6 +1,7 @@
-import App from './App';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
+
+
 const routes = [
   {
     path: '/',
