@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
+import Cart from './pages/Cart';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const App = () => {
@@ -21,6 +22,10 @@ const App = () => {
       element: (
         <ShopPage cart={cart} addToCart={addToCart} itemCount={itemCount} />
       ),
+    },
+    {
+      path: '/cart',
+      element: <Cart items={cart} />,
     },
   ]);
 

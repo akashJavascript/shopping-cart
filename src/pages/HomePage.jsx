@@ -4,7 +4,6 @@ import NavbarShop from '../components/NavbarShop';
 import CollectionBanner from '../components/CollectionBanner';
 import '../styles/HomePage.css';
 import { UseGetItems } from '../hooks/getItems';
-
 const HomePage = ({ itemCount }) => {
   const items = UseGetItems(4);
   const prices = items.map(item => item.price);
