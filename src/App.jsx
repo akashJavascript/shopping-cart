@@ -25,7 +25,7 @@ const App = () => {
     },
     {
       path: '/cart',
-      element: <Cart items={cart} />,
+      element: <Cart items={cart} itemCount={itemCount} />,
     },
   ]);
 

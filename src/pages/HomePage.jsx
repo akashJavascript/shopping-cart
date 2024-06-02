@@ -1,5 +1,4 @@
 import ProductCardDisplay from '../components/ProductCardDisplay';
-import Navbar from '../components/Navbar';
 import NavbarShop from '../components/NavbarShop';
 import CollectionBanner from '../components/CollectionBanner';
 import '../styles/HomePage.css';

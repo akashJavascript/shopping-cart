@@ -46,6 +46,7 @@ ul {
   width: 100%;
   justify-content: flex-end;
   margin-right: 15px;
+  gap: 10px;
 }
 .nav-link {
   text-decoration: none;

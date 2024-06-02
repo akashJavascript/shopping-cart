@@ -46,7 +46,15 @@ const ProductCard = ({ imgSrc, price, name, addToCart, id }) => {
           </div>
           <button
             className="add-cart-button"
-            onClick={() => addToCart({ id: id, quantity: Number(quantity) })}
+            onClick={() =>
+              addToCart({
+                id: id,
+                quantity: Number(quantity),
+                price: price,
+                imgSrc: imgSrc,
+                name: name,
+              })
+            }
           >
             Add
           </button>
