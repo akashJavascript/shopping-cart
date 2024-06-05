@@ -2,6 +2,7 @@ import NavbarShop from '../components/NavbarShop';
 import CartItem from '../components/CartItem';
 import { UseGetItems } from '../hooks/getItems';
 const Cart = ({ items }) => {
+  console.log(items);
   return (
     <div>
       <NavbarShop />

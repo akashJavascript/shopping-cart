@@ -8,7 +8,20 @@ const App = () => {
   const [cart, setCart] = useState([]);
 
   const addToCart = item => {
-    setCart([...cart, item]);
+    // Check if the item already exists in the cart
+    const existingItemIndex = cart.findIndex(
+      cartItem => cartItem.id === item.id
+    );
+    console.log(existingItemIndex);
+    if (existingItemIndex !== -1) {
+      // If item already exists, update its quantity
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += item.quantity;
+      setCart(updatedCart);
+    } else {
+      // If item doesn't exist, add it to the cart
+      setCart([...cart, item]);
+    }
   };
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
