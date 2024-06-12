@@ -1,13 +1,14 @@
 import '../styles/CartItem.css';
+import QuantityInput from './QuantityInput';
 const CartItem = ({ item }) => {
   return (
     <div className="cart-item">
-      <img src={item.imgSrc} alt="item" className='item-image'/>
+      <img src={item.imgSrc} alt="item" className="item-image" />
       <div className="item-details">
-        <span className="name">{item.name}</span>
-        <span className="cart-item-price">
+        <div className="cart-item-name">{item.name}</div>
+        <div className="cart-item-price">
           {item.quantity} x ${item.price}
-        </span>
+        </div>
       </div>
     </div>
   );

@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import '../styles/ProductCard.css';
 import { useState } from 'react';
+import QuantityInput from './QuantityInput';
 
 const ProductCard = ({ imgSrc, price, name, addToCart, id }) => {
   const [quantity, setQuantity] = useState(1);
 
   const incrementQuantity = () => {
-    setQuantity(prevQuantity => prevQuantity + 1);
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const decrementQuantity = () => {
     if (quantity > 1) {
-      setQuantity(prevQuantity => prevQuantity - 1);
+      setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
 
@@ -27,27 +28,15 @@ const ProductCard = ({ imgSrc, price, name, addToCart, id }) => {
       <div className="card-bottom">
         <p className="shop-price">${price}</p>
         <div className="add-cart-container">
-          <div className="quantity-container">
-            <button className="decrement-button" onClick={decrementQuantity}>
-              -
-            </button>
-            <input
-              type="number"
-              name="quantity"
-              id="quantity"
-              value={quantity}
-              onChange={e =>
-                setQuantity(e.target.value === '' ? '' : Number(e.target.value))
-              }
-            />
-            <button className="increment-button" onClick={incrementQuantity}>
-              +
-            </button>
-          </div>
+          <QuantityInput
+            quantity={quantity}
+            setQuantity={setQuantity}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
+          />
           <button
             className="add-cart-button"
             onClick={() => {
-              console.log(quantity);
               addToCart({
                 id: id,
                 quantity: Number(quantity),

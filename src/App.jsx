@@ -12,7 +12,6 @@ const App = () => {
     const existingItemIndex = cart.findIndex(
       cartItem => cartItem.id === item.id
     );
-    console.log(existingItemIndex);
     if (existingItemIndex !== -1) {
       // If item already exists, update its quantity
       const updatedCart = [...cart];

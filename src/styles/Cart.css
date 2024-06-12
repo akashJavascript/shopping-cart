@@ -1,0 +1,9 @@
+.cart-header {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.2;
+    color: white;
+    background-color: #0ea5e9;
+    padding: 10px;
+    text-align: center;
+  }

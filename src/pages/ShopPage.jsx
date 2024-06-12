@@ -11,7 +11,7 @@ const ShopPage = ({ cart, addToCart, itemCount }) => {
       <NavbarShop itemCount={itemCount}></NavbarShop>
       <h1 className="shop-header">Shop</h1>
       <div className="items-container">
-        {items.map(item => {
+        {items.map((item) => {
           return (
             <ProductCard
               key={item.id}
