@@ -15,7 +15,6 @@ const ProductCard = ({ imgSrc, price, name, addToCart, id }) => {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };
-
   return (
     <div className="shop-card">
       <div className="card-top">

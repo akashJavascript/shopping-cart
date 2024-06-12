@@ -7,10 +7,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const App = () => {
   const [cart, setCart] = useState([]);
 
-  const addToCart = item => {
+  const addToCart = (item) => {
     // Check if the item already exists in the cart
     const existingItemIndex = cart.findIndex(
-      cartItem => cartItem.id === item.id
+      (cartItem) => cartItem.id === item.id,
     );
     if (existingItemIndex !== -1) {
       // If item already exists, update its quantity
@@ -20,6 +20,16 @@ const App = () => {
     } else {
       // If item doesn't exist, add it to the cart
       setCart([...cart, item]);
+    }
+  };
+  const setItemQuantity = (itemId, newQuantity) => {
+    const existingItemIndex = cart.findIndex(
+      (cartItem) => cartItem.id === itemId,
+    );
+    if (existingItemIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity = newQuantity;
+      setCart(updatedCart);
     }
   };
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
@@ -37,7 +47,14 @@ const App = () => {
     },
     {
       path: '/cart',
-      element: <Cart items={cart} itemCount={itemCount} />,
+      element: (
+        <Cart
+          items={cart}
+          itemCount={itemCount}
+          addToCart={addToCart}
+          setItemQuantity={setItemQuantity}
+        />
+      ),
     },
   ]);
 
