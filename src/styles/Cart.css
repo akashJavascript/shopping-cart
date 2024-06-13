@@ -1,9 +1,32 @@
 .cart-header {
-    font-family: 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: 1.2;
-    color: white;
-    background-color: #0ea5e9;
-    padding: 10px;
-    text-align: center;
-  }
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.2;
+  color: white;
+  background-color: #0ea5e9;
+  padding: 10px;
+  text-align: center;
+}
+.total {
+  font-family: 'Inter', sans-serif;
+}
+.checkout-button {
+  font-family: 'Inter', sans-serif;
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.checkout-button:hover {
+  background-color: #0c8dcf;
+}
+
+.checkout-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}

@@ -37,6 +37,7 @@
 @media screen and (max-width: 599px) {
   .collection-banner {
     height: 200px;
+    padding: 10px;
   }
   .text-container {
     padding: 20px;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import Cart from './pages/Cart';
@@ -6,6 +6,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const App = () => {
   const [cart, setCart] = useState([]);
+  useEffect(() => {
+    const cart = localStorage.getItem('cart');
+    if (cart) {
+      setCart(JSON.parse(cart));
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (item) => {
     // Check if the item already exists in the cart
@@ -32,6 +41,10 @@ const App = () => {
       setCart(updatedCart);
     }
   };
+  const deleteItem = (itemId) => {
+    const updatedCart = cart.filter((item) => item.id !== itemId);
+    setCart(updatedCart);
+  };
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   const router = createBrowserRouter([
@@ -51,8 +64,8 @@ const App = () => {
         <Cart
           items={cart}
           itemCount={itemCount}
-          addToCart={addToCart}
           setItemQuantity={setItemQuantity}
+          deleteItem={deleteItem}
         />
       ),
     },

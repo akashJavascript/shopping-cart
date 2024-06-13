@@ -13,7 +13,7 @@ function QuantityInput({
   const handleChange = (event) => {
     let value = event.target.value;
     if (value !== '') {
-      value = Number(value);
+      value = parseInt(Number(value));
       if (value < 1) {
         value = 1;
       }

@@ -1,7 +1,7 @@
 import '../styles/CartItem.css';
 import { useState } from 'react';
 import QuantityInput from './QuantityInput';
-const CartItem = ({ item, addToCart, setItemQuantity }) => {
+const CartItem = ({ item, setItemQuantity, deleteItem }) => {
   const [quantity, setQuantity] = useState(item.quantity);
   const incrementQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -22,14 +22,19 @@ const CartItem = ({ item, addToCart, setItemQuantity }) => {
         <div className="cart-item-price">
           {quantity} x ${item.price}
         </div>
-        <QuantityInput
-          quantity={quantity}
-          setQuantity={setQuantity}
-          incrementQuantity={incrementQuantity}
-          decrementQuantity={decrementQuantity}
-          changeFunction={setItemQuantity}
-          itemId={item.id}
-        />
+        <div className="item-options">
+          <QuantityInput
+            quantity={quantity}
+            incrementQuantity={incrementQuantity}
+            setQuantity={setQuantity}
+            decrementQuantity={decrementQuantity}
+            changeFunction={setItemQuantity}
+            itemId={item.id}
+          />
+          <button className="delete-item" onClick={() => deleteItem(item.id)}>
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );

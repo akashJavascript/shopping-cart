@@ -5,7 +5,6 @@ import '../styles/ShopPage.css';
 
 const ShopPage = ({ cart, addToCart, itemCount }) => {
   let items = UseGetItems(20);
-
   return (
     <div>
       <NavbarShop itemCount={itemCount}></NavbarShop>
