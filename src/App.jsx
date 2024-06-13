@@ -45,6 +45,9 @@ const App = () => {
     const updatedCart = cart.filter((item) => item.id !== itemId);
     setCart(updatedCart);
   };
+  const emptyCart = () => {
+    setCart([]);
+  };
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   const router = createBrowserRouter([
@@ -54,9 +57,7 @@ const App = () => {
     },
     {
       path: '/shop',
-      element: (
-        <ShopPage cart={cart} addToCart={addToCart} itemCount={itemCount} />
-      ),
+      element: <ShopPage addToCart={addToCart} itemCount={itemCount} />,
     },
     {
       path: '/cart',
@@ -66,6 +67,7 @@ const App = () => {
           itemCount={itemCount}
           setItemQuantity={setItemQuantity}
           deleteItem={deleteItem}
+          emptyCart={emptyCart}
         />
       ),
     },

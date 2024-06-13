@@ -1,4 +1,5 @@
 import '../styles/QuantityInput.css';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 function QuantityInput({
   quantity,
@@ -51,3 +52,11 @@ function QuantityInput({
 }
 
 export default QuantityInput;
+QuantityInput.propTypes = {
+  quantity: PropTypes.number.isRequired,
+  setQuantity: PropTypes.func.isRequired,
+  incrementQuantity: PropTypes.func.isRequired,
+  decrementQuantity: PropTypes.func.isRequired,
+  changeFunction: PropTypes.func,
+  itemId: PropTypes.number,
+};

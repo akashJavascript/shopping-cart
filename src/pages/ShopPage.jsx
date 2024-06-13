@@ -1,9 +1,10 @@
 import ProductCard from '../components/ProductCard';
+import PropTypes from 'prop-types';
 import { UseGetItems } from '../hooks/getItems';
 import NavbarShop from '../components/NavbarShop';
 import '../styles/ShopPage.css';
 
-const ShopPage = ({ cart, addToCart, itemCount }) => {
+const ShopPage = ({ addToCart, itemCount }) => {
   let items = UseGetItems(20);
   return (
     <div>
@@ -28,3 +29,8 @@ const ShopPage = ({ cart, addToCart, itemCount }) => {
 };
 
 export default ShopPage;
+
+ShopPage.propTypes = {
+  addToCart: PropTypes.func.isRequired,
+  itemCount: PropTypes.number.isRequired,
+};

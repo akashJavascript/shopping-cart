@@ -1,4 +1,5 @@
 import '../styles/CartItem.css';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import QuantityInput from './QuantityInput';
 const CartItem = ({ item, setItemQuantity, deleteItem }) => {
@@ -41,3 +42,14 @@ const CartItem = ({ item, setItemQuantity, deleteItem }) => {
 };
 
 export default CartItem;
+CartItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    imgSrc: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired,
+  }).isRequired,
+  setItemQuantity: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+};
