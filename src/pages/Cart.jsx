@@ -32,12 +32,14 @@ const Cart = ({ items, itemCount, setItemQuantity, deleteItem, emptyCart }) => {
           })
         )}
       </div>
-      <section className="checkout-section">
-        <div className="total">Total: {formatted}</div>
-        <button className="checkout-button" onClick={emptyCart}>
-          Checkout
-        </button>
-      </section>
+      {items.length > 0 && (
+        <section className="checkout-section">
+          <div className="total">Total: {formatted}</div>
+          <button className="checkout-button" onClick={emptyCart}>
+            Checkout
+          </button>
+        </section>
+      )}
     </div>
   );
 };
